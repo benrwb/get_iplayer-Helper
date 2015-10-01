@@ -13,7 +13,3 @@ http://www.reddit.com/r/BritishTV/comments/2kwh6p/bbc_removes_programme_feeds_a_
 
 ![Screenshot](WpfApplication3/iph.png)
 =======
-
-![Screenshot](WpfApplication3/iph.png)
-
->>>>>>> parent of 1868756... Update README.md
