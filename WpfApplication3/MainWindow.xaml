@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApplication3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="get_iplayer Helper" Height="455.777" Width="834.333" Icon="icon5.ico" Closing="Window_Closing">
+    <Grid Margin="0,0,0.222,0">
+        <TextBox x:Name="txtCmdLine" Margin="10,0,9.222,120.778" TextWrapping="Wrap" Text="" IsReadOnly="True" Height="23" VerticalAlignment="Bottom" BorderThickness="0"  Background="#FFE5E5E5"/>
+        <TextBox x:Name="textBox1" Margin="10,0,10.222,10.778" Text="" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" FontFamily="Consolas" Background="Black" Foreground="#FFF54997" Height="110" VerticalAlignment="Bottom"/>
+        <Button Content="Open Folder" Margin="0,44,10.222,0" VerticalAlignment="Top" Click="btnOpenFolder_Click" HorizontalAlignment="Right" Width="97"/>
+        <DataGrid x:Name="dataGrid1" Margin="10,108,10.222,148.778" CanUserAddRows="False" ItemsSource="{Binding}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="btnInfo_Click" Padding="12,0" Background="LightBlue">Web</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="btnGet_Click" Padding="15,0" Background="{Binding ButtonColor}" IsEnabled="{Binding EnableGet}" Content="{Binding ButtonText}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Name}" IsReadOnly="True"  />
+                <DataGridTextColumn Binding="{Binding Notes, UpdateSourceTrigger=PropertyChanged}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Background="#FFE5E5E5" Margin="10,0,145.222,0" Height="103" VerticalAlignment="Top">
+            <RadioButton x:Name="rdoTV" Content="_TV" HorizontalAlignment="Left" Margin="114,73,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="rdoRadio" Content="_Radio" HorizontalAlignment="Left" Margin="168,73,0,0" VerticalAlignment="Top"  IsChecked="True"/>
+            <Label Content="_Search for" Target="txtSearch" HorizontalAlignment="Left" Margin="43,47,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="23" Margin="110,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+            <Button x:Name="btnSearch"  Content="Search" HorizontalAlignment="Left" Margin="309,53,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.039,-0.432" Click="btnSearch_Click" IsDefault="True"/>
+            <CheckBox x:Name="chkBestQuality" Content="Best quality" Margin="0,0,21.334,15" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="82"/>
+            <Button x:Name="btnShowDownloads" Content="Show Downloaded Files" HorizontalAlignment="Right" Margin="0,20,49.778,0" VerticalAlignment="Top" Width="161" Click="btnShowDownloads_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
